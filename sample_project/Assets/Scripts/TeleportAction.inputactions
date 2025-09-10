@@ -1,0 +1,107 @@
+{
+    "name": "TeleportAction",
+    "maps": [
+        {
+            "name": "Teleport",
+            "id": "f6e70db1-79c3-402b-a576-0d18ddf8ae99",
+            "actions": [
+                {
+                    "name": "Teleport1",
+                    "type": "Button",
+                    "id": "48da3c1f-0f86-4c0e-a2b2-d5146541336b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Teleport2",
+                    "type": "Button",
+                    "id": "8653ae36-d02e-4c9c-8e3e-3c00358666aa",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Teleport3",
+                    "type": "Button",
+                    "id": "fa18e7d7-fdb8-4407-894a-302abd433387",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "7f9d0442-7c24-403e-a896-4b32a73b912a",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Teleport2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9e46104c-f469-473f-a69c-f4afa1f11f19",
+                    "path": "<Keyboard>/numpad2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Teleport2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2ce623b0-b10d-4fdf-a72d-0c02774f7039",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Teleport1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4b4ea08c-39bb-4136-a78b-f8f92c852c72",
+                    "path": "<Keyboard>/numpad1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Teleport1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1ab64c8f-27fb-4099-a5dc-ea78d7055576",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Teleport3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "81ef0212-1162-4f23-8cd9-6fc909c067d4",
+                    "path": "<Keyboard>/numpad3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Teleport3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
