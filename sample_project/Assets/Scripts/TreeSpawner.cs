@@ -10,7 +10,6 @@ public class TreeSpawner : MonoBehaviour
 
     private void Awake()
     {
-        // Get a list of all the trees
         treeList = FindObjectsByType<Tree>(FindObjectsSortMode.None).ToList();
     }
 
@@ -21,7 +20,7 @@ public class TreeSpawner : MonoBehaviour
 
     public void SpawnTrees()
     {
-        // Update the trees
+        // TODO: make tree be in different places
         foreach (Tree obj in treeList)
         {
             obj.PrintCoordinates();

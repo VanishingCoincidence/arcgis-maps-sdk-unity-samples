@@ -5,11 +5,9 @@ using Esri.ArcGISMapsSDK.Components;
 
 public class DayNightManager : MonoBehaviour
 {
-    [SerializeField] private DirectionalLight sunLight;
-    //[SerializeField] private LightingPreset lightPreset;
+    [SerializeField] private Light sunLight;
+    [SerializeField] private ;
 
-    [Range(0f, 24f)]
-    [SerializeField] private float timeOfDay;
 
     private ArcGISMapComponent mapComponent;
 
@@ -21,7 +19,7 @@ public class DayNightManager : MonoBehaviour
 
     void Update()
     {
-        
+        // still feels wrong?? need to do more research
         RotateSky(System.DateTime.Now.Hour/ 24f);
         
     }
