@@ -29,7 +29,10 @@ public class DayNightManager : MonoBehaviour
             longitude += 360f;
         }
 
+        // used the example but made it use the system clock
+        float rotationCalculation = System.DateTime.Now.Hour / 24f * 360f - 90f;
+
         // finds where the light should be pointing depending on time according to the system and location
-        sunLight.transform.localRotation = Quaternion.Euler(new Vector3(((System.DateTime.Now.Hour / 24f) * 360f) + longitude - 90f, 0f, 0f));
+        sunLight.transform.eulerAngles = new Vector3(transform.rotation.x, transform.rotation.y, rotationCalculation + longitude); 
     }
 }
