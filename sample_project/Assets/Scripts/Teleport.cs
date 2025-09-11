@@ -14,7 +14,6 @@ public class Teleport : MonoBehaviour
     private ArcGISPoint bostonLocation = new ArcGISPoint(-71.0565, 42.3555, 0, ArcGISSpatialReference.WGS84());
     private ArcGISPoint nycLocation = new ArcGISPoint(-74.0060, 40.7128, 0, ArcGISSpatialReference.WGS84());
     public ArcGISPoint currentLocation;
-
     private TeleportAction teleportAction;
     private TreeSpawner treeSpawner;
 

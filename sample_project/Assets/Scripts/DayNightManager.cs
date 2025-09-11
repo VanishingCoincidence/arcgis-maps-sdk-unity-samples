@@ -5,36 +5,30 @@ using Esri.ArcGISMapsSDK.Components;
 
 public class DayNightManager : MonoBehaviour
 {
-    [SerializeField] private Light sunLight;
-    [SerializeField] private ;
-
-
+    private Light sunLight;
     private ArcGISMapComponent mapComponent;
 
 
     private void Awake()
     {
+        sunLight = FindFirstObjectByType<Light>();
         mapComponent = FindFirstObjectByType<ArcGISMapComponent>(); 
     }
 
     void Update()
     {
-        // still feels wrong?? need to do more research
-        RotateSky(System.DateTime.Now.Hour/ 24f);
-        
+        RotateSky();
     }
 
-    private void RotateSky(float time)
+    private void RotateSky()
     {
-        var rotationCalculation = time * 360;
+        float longitude = (float)mapComponent.OriginPosition.X;
 
-        if (time >= 24.0)
+        if (longitude < 0)
         {
-            time = 0.0f;
+            longitude += 360f;
         }
-        else
-        {
-            transform.eulerAngles = new Vector3(transform.rotation.x, transform.rotation.y, (float)rotationCalculation);
-        }
+
+        sunLight.transform.localRotation = Quaternion.Euler(new Vector3(((System.DateTime.Now.Hour / 24f) * 360f) + (float)longitude - 90f, 0f, 0f));
     }
 }
