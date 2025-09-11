@@ -16,6 +16,7 @@ public class Tree : MonoBehaviour
 
     public void PrintCoordinates()
     {
+        // converts Unity location to coordinates
         ArcGISPoint coordinates = mapComponent.View.WorldToGeographic(mapComponent.GetComponent<HPRoot>().InverseTransformPoint(new double3(transform.position)));
         Debug.Log($"Tree: {coordinates.X}, {coordinates.Y}");
     }

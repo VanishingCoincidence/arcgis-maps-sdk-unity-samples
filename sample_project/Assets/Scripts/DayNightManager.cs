@@ -24,11 +24,12 @@ public class DayNightManager : MonoBehaviour
     {
         float longitude = (float)mapComponent.OriginPosition.X;
 
-        if (longitude < 0)
+        if (longitude < 0f)
         {
             longitude += 360f;
         }
 
-        sunLight.transform.localRotation = Quaternion.Euler(new Vector3(((System.DateTime.Now.Hour / 24f) * 360f) + (float)longitude - 90f, 0f, 0f));
+        // finds where the light should be pointing depending on time according to the system and location
+        sunLight.transform.localRotation = Quaternion.Euler(new Vector3(((System.DateTime.Now.Hour / 24f) * 360f) + longitude - 90f, 0f, 0f));
     }
 }

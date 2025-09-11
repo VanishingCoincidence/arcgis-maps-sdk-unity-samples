@@ -42,6 +42,11 @@ public class Teleport : MonoBehaviour
         teleportAction.Teleport.Teleport3.started -= ToLocation3;
     }
 
+
+    /// <summary>
+    /// takes you straight to Montreal, Canada. same code as two other methods below. wish i had the time to consoloate
+    /// </summary>
+    /// <param name="ctx"></param>
     private void ToLocation1(InputAction.CallbackContext ctx)
     {
         Debug.Log("To Montreal");
