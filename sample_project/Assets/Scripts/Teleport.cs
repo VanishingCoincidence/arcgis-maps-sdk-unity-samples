@@ -16,6 +16,7 @@ public class Teleport : MonoBehaviour
     public ArcGISPoint currentLocation;
 
     private TeleportAction teleportAction;
+    private TreeSpawner treeSpawner;
 
     private void Awake()
     {
@@ -23,6 +24,7 @@ public class Teleport : MonoBehaviour
         cameraComponent = mapComponent.GetComponentInChildren<ArcGISCameraComponent>();
         teleportAction = new TeleportAction();
         currentLocation = nycLocation;
+        treeSpawner = FindFirstObjectByType<TreeSpawner>();
     }
 
     private void OnEnable()
@@ -47,6 +49,7 @@ public class Teleport : MonoBehaviour
         mapComponent.OriginPosition = montrealLocation;
         mapComponent.UpdateHPRoot();
         currentLocation = montrealLocation;
+        treeSpawner.SpawnTrees();
         cameraComponent.GetComponent<ArcGISLocationComponent>().Position = new ArcGISPoint(-73.5674, 45.5019, 2000, ArcGISSpatialReference.WGS84());
     }
 
@@ -56,6 +59,7 @@ public class Teleport : MonoBehaviour
         mapComponent.OriginPosition = bostonLocation;
         mapComponent.UpdateHPRoot();
         currentLocation = bostonLocation;
+        treeSpawner.SpawnTrees();
         cameraComponent.GetComponent<ArcGISLocationComponent>().Position = new ArcGISPoint(-71.0565, 42.3555, 2000, ArcGISSpatialReference.WGS84());
     }
 
@@ -65,6 +69,7 @@ public class Teleport : MonoBehaviour
         mapComponent.OriginPosition = nycLocation;
         mapComponent.UpdateHPRoot();
         currentLocation = nycLocation;
+        treeSpawner.SpawnTrees();
         cameraComponent.GetComponent<ArcGISLocationComponent>().Position = new ArcGISPoint(-74.0060, 40.7128, 2000, ArcGISSpatialReference.WGS84());
     }
 

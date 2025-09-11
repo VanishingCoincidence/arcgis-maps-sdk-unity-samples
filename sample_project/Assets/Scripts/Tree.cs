@@ -6,12 +6,18 @@ using UnityEngine;
 
 public class Tree : MonoBehaviour
 {
-    [SerializeField] private ArcGISMapComponent arcGISMapComponent;
+    private ArcGISMapComponent mapComponent;
+
+    private void Awake()
+    {
+        mapComponent = FindFirstObjectByType<ArcGISMapComponent>();
+    }
+
 
     public void PrintCoordinates()
     {
         // convert Unity location to irl coordinates
-        ArcGISPoint coordinates = arcGISMapComponent.View.WorldToGeographic(arcGISMapComponent.GetComponent<HPRoot>().InverseTransformPoint(new double3(transform.position)));
+        ArcGISPoint coordinates = mapComponent.View.WorldToGeographic(mapComponent.GetComponent<HPRoot>().InverseTransformPoint(new double3(transform.position)));
         Debug.Log($"{name} is at ({coordinates.X}, {coordinates.Y})");
     }
 }

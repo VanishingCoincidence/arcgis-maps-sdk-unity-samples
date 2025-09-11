@@ -4,9 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class MapLocationController : MonoBehaviour
+public class TreeSpawner : MonoBehaviour
 {
-
     private List<Tree> treeList;
 
     private void Awake()
@@ -15,7 +14,12 @@ public class MapLocationController : MonoBehaviour
         treeList = FindObjectsByType<Tree>(FindObjectsSortMode.None).ToList();
     }
 
-    private void SetLocationFromIndex()
+    private void Start()
+    {
+        SpawnTrees();
+    }
+
+    public void SpawnTrees()
     {
         // Update the trees
         foreach (Tree obj in treeList)
